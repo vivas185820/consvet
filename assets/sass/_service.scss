@@ -1,0 +1,73 @@
+// Feature 1
+.single_service_item {
+  margin: 60px 0 30px;
+  position: relative;
+  border-radius: 100% 45%;
+  height: 360px;
+  text-align: center;
+  padding: 95px 45px;
+  @include transition(all, 0.3s, ease-in-out);
+  top: 0;
+  z-index: 1;
+  @include boxshadow(0px, 0px, 19.8px, 0.2px, rgba(76, 85, 196, 0.08), false);
+  &:hover {
+    background: $brand;
+  }
+  .service_icon {
+    position: absolute;
+    top: -58px;
+    z-index: 5;
+    right: calc(50% - 58px);
+    width: 116px;
+    background-color: $brand_alt;
+    height: 116px;
+    @include transition(all, 0.3s, ease-in-out);
+    border-radius: 50%;
+    i {
+      font-size: 36px;
+      color: $brand;
+    }
+  }
+
+  &:hover {
+    h5 {
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+  }
+  h5 {
+    margin-bottom: 20px;
+    @include transition(all, 0.3s, ease-in-out);
+  }
+  p {
+    line-height: 1.75;
+    @include transition(all, 0.3s, ease-in-out);
+    margin-bottom: 30px;
+  }
+  .boxed_btn {
+    display: inline-block;
+    background-color: $brand_alt;
+    font-size: 16px;
+    color: $text;
+    border-radius: 50%;
+    font-weight: 700;
+    padding: 20px;
+    @include transition(all, 0.3s, ease-in-out);
+    &:hover {
+      background: #fff;
+      color: $brand;
+    }
+  }
+}
+
+// Responsive
+@media #{$medium_device} {
+}
+@media #{$tab_device} {
+}
+@media #{$small_mobile} {
+}
+@media #{$large_mobile} {
+}

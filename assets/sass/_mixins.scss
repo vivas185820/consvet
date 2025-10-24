@@ -1,0 +1,153 @@
+// heading font
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@mixin heading_font($weight) {
+  font-weight: $weight;
+  font-family: "Josefin Sans", sans-serif;
+}
+// body_font
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600&display=swap");
+@mixin body_font($weight) {
+  font-weight: $weight;
+  font-family: "Muli", sans-serif;
+}
+// transition
+@mixin transition($where: all, $time: 0.2s, $ani: ease-in-out) {
+  -webkit-transition: $where $time $ani;
+  -moz-transition: $where $time $ani;
+  -ms-transition: $where $time $ani;
+  -o-transition: $where $time $ani;
+  transition: $where $time $ani;
+}
+// background img property
+@mixin bg_property() {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Box-shadow
+@mixin boxshadow($top, $left, $blur, $size, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $size $color;
+    -moz-box-shadow: inset $top $left $blur $size $color;
+    box-shadow: inset $top $left $blur $size $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $size $color;
+    -moz-box-shadow: $top $left $blur $size $color;
+    box-shadow: $top $left $blur $size $color;
+  }
+}
+// grandient color
+@mixin gradient_bg($direction) {
+  @if $direction == left {
+    background: -webkit-linear-gradient(
+      right,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(
+      $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+  } @else if $direction == right {
+    background: -webkit-linear-gradient(
+      left,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -o-linear-gradient(
+      $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -moz-linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+  } @else if $direction == top {
+    background: -webkit-linear-gradient(
+      bottom,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -o-linear-gradient(
+      $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -moz-linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+  } @else {
+    background: -webkit-linear-gradient(
+      top,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -o-linear-gradient(
+      $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: -moz-linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+    background: linear-gradient(
+      to $direction,
+      rgb(10, 207, 254) 0%,
+      rgb(24, 45, 238) 100%
+    );
+  }
+}
+// placeholder color
+@mixin placeholdercolor($color, $coloropacity) {
+  &::placeholder {
+    opacity: $coloropacity;
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $coloropacity;
+    color: $color;
+  }
+
+  &::-ms-input-placeholder {
+    opacity: $coloropacity;
+    color: $color;
+  }
+  &:-moz-placeholder {
+    opacity: $coloropacity;
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    opacity: $coloropacity;
+    color: $color;
+  }
+}
